@@ -31,7 +31,9 @@ Deploy a scalable and highly available web application on AWS using Amazon EC2 i
 - Database high availability with RDS Multi-AZ.
 - Static content caching with CloudFront.
 - Monitoring and notifications using CloudWatch and SNS.
+- 
 ## ========================================
+
 # Project02 "Serverless Image Processing Pipeline with S3, SQS & Lambda"
 
 ## 1. Solution Architecture Diagram
@@ -65,7 +67,8 @@ Amazon DynamoDB stores image metadata, and Amazon SNS sends notifications about 
 - Processing status notifications using SNS.
 - S3 lifecycle rules for storage management.
 
-## ========================================
+## =======================================
+
 # Project 3: Serverless REST API with Cognito Auth, DynamoDB & WAF
 
 ## 1. Solution Architecture Diagram
@@ -97,3 +100,37 @@ Build a serverless REST API for a To-Do or customer records application using Am
 - CloudFront integration.
 - Distributed tracing with AWS X-Ray.
 
+## =======================================
+
+# Project 4: Hybrid Cloud Connectivity with Transit Gateway and Site-to-Site VPN
+
+## 1. Solution Architecture Diagram
+
+![AWS Architecture Diagram](/images/Project04.png)
+
+## 2. Project Description
+
+Design a hybrid cloud network that connects an on-premises data center to multiple AWS VPCs for Development, Staging, and Production environments. AWS Transit Gateway acts as the central network hub, while AWS Site-to-Site VPN provides secure connectivity between the data center and AWS. Route 53 Resolver enables private DNS resolution between on-premises hosts and AWS resources. AWS Network Firewall inspects network traffic, AWS RAM enables Transit Gateway sharing across accounts, and CloudTrail and AWS Config help audit and track network configuration changes.
+
+## 3. AWS Services and Their Roles
+
+- **Amazon VPC:** Creates isolated networks for Dev, Staging, and Production environments with non-overlapping CIDR ranges.
+- **AWS Transit Gateway:** Acts as the central hub connecting multiple VPCs and the on-premises network through attachments and routing tables.
+- **AWS Site-to-Site VPN:** Establishes an encrypted connection between AWS and the on-premises data center using IPsec tunnels, with optional dynamic routing through BGP.
+- **AWS Direct Connect:** Provides a dedicated network connection between the on-premises data center and AWS as an alternative to VPN, depending on bandwidth, cost, and connectivity requirements.
+- **Amazon Route 53 Resolver:** Enables DNS queries between on-premises networks and AWS using inbound and outbound endpoints.
+- **AWS Resource Access Manager (RAM):** Shares the Transit Gateway with other AWS accounts.
+- **AWS Network Firewall:** Inspects and filters network traffic to help protect VPCs and control traffic between networks.
+- **AWS CloudTrail:** Records AWS API activity to help audit changes to network resources.
+- **AWS Config:** Tracks resource configurations and evaluates them against configuration rules.
+
+## 4. Key Features
+
+- Hybrid connectivity between an on-premises data center and AWS.
+- Centralized multi-VPC networking using Transit Gateway.
+- Secure Site-to-Site VPN connectivity with BGP routing.
+- Private DNS resolution across on-premises and AWS networks.
+- Transit Gateway sharing across multiple AWS accounts.
+- Centralized network traffic inspection using AWS Network Firewall.
+- Network configuration auditing and tracking with CloudTrail and AWS Config.
+- Comparison of Site-to-Site VPN and Direct Connect.
