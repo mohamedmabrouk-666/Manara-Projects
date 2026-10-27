@@ -31,7 +31,7 @@ Deploy a scalable and highly available web application on AWS using Amazon EC2 i
 - Database high availability with RDS Multi-AZ.
 - Static content caching with CloudFront.
 - Monitoring and notifications using CloudWatch and SNS.
-## =======================================================
+## ========================================
 # Project02 "Serverless Image Processing Pipeline with S3, SQS & Lambda"
 
 ## 1. Solution Architecture Diagram
@@ -65,4 +65,35 @@ Amazon DynamoDB stores image metadata, and Amazon SNS sends notifications about 
 - Processing status notifications using SNS.
 - S3 lifecycle rules for storage management.
 
+## ========================================
+# Project 3: Serverless REST API with Cognito Auth, DynamoDB & WAF
+
+## 1. Solution Architecture Diagram
+
+![AWS Architecture Diagram](/images/Project03.png)
+
+## 2. Project Description
+
+Build a serverless REST API for a To-Do or customer records application using Amazon API Gateway, AWS Lambda, and Amazon DynamoDB. Secure the API with Amazon Cognito and AWS WAF, improve performance with caching and CloudFront, and monitor request execution using AWS X-Ray.
+
+## 3. AWS Services and Their Roles
+
+- **Amazon API Gateway:** Creates the REST API, handles authorization, usage plans, and response caching.
+- **Amazon Cognito:** Manages user sign-up, sign-in, and JWT-based authentication.
+- **AWS Lambda:** Executes CRUD operations for application records.
+- **Amazon DynamoDB:** Stores application data using tables and Global Secondary Indexes (GSIs).
+- **AWS WAF:** Protects the API using rate-based rules and managed security rules.
+- **Amazon CloudFront:** Provides edge delivery for the API and static frontend.
+- **Amazon S3:** Hosts static frontend files built with React or Vue.
+- **AWS X-Ray:** Traces requests across API Gateway, Lambda, and DynamoDB.
+
+## 4. Key Features
+
+- Secure API access using Cognito authentication and JWT tokens.
+- CRUD operations for application records.
+- DynamoDB table design.
+- API protection using AWS WAF.
+- API Gateway response caching to reduce backend load.
+- CloudFront integration.
+- Distributed tracing with AWS X-Ray.
 
