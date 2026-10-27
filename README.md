@@ -32,11 +32,11 @@ Deploy a scalable and highly available web application on AWS using Amazon EC2 i
 - Static content caching with CloudFront.
 - Monitoring and notifications using CloudWatch and SNS.
 ## =======================================================
-# Serverless Image Processing Pipeline with S3, SQS & Lambda
+# Project02 "Serverless Image Processing Pipeline with S3, SQS & Lambda"
 
 ## 1. Solution Architecture Diagram
 
-![Serverless Image Processing Architecture](/images/Project02.png)
+![AWS Architecture Diagram](/images/Project02.png)
 
 ## 2. Project Description
 
