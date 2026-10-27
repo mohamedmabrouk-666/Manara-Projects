@@ -1,10 +1,8 @@
-![AWS Architecture Diagram](/images/Project01.png)
-
-# Scalable Web Application with ALB and Auto Scaling
+# Project 1:Scalable Web Application with ALB and Auto Scaling
 
 ## 1. Solution Architecture Diagram
 
-![AWS Architecture Diagram](architecture/architecture.png)
+![AWS Architecture Diagram](/images/Project01.png)
 
 ## 2. Project Description
 
@@ -19,8 +17,6 @@ Deploy a scalable and highly available web application on AWS using Amazon EC2 i
 - **AWS WAF:** Protects the application against common web attacks.
 - **Amazon CloudFront:** Caches static assets to improve performance.
 - **Amazon RDS Multi-AZ:** Provides a highly available relational database.
-- **Amazon Route 53:** Manages DNS routing for the application.
-- **AWS Systems Manager Session Manager:** Provides secure access to EC2 instances without requiring inbound SSH access.
 - **Amazon CloudWatch:** Monitors infrastructure and triggers alarms.
 - **Amazon SNS:** Sends notifications from configured alarms.
 - **NAT Gateway:** Enables outbound internet access from private subnets when required.
@@ -31,7 +27,7 @@ Deploy a scalable and highly available web application on AWS using Amazon EC2 i
 - High availability across two Availability Zones.
 - Automatic scaling based on application demand.
 - Load balancing across healthy application instances.
-- Secure network segmentation.
+- Secure network.
 - Database high availability with RDS Multi-AZ.
 - Static content caching with CloudFront.
 - Monitoring and notifications using CloudWatch and SNS.
