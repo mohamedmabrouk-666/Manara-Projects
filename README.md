@@ -178,19 +178,17 @@ Build a multi-region disaster recovery architecture for a web application runnin
 
 ## 2. Project Description
 
-Build a containerized Node.js application by splitting a monolithic application into three independent microservices: **Auth, Orders, and Notifications**. Amazon ECS Fargate runs the containers without requiring server management, while Amazon ECR stores their Docker images. An Application Load Balancer routes external requests to the appropriate microservice, and AWS Cloud Map enables service-to-service communication through DNS-based discovery. AWS Secrets Manager securely provides credentials and API keys at runtime, while ElastiCache for Redis stores shared session data across container instances. AWS CodePipeline and CodeDeploy automate blue/green deployments with rollback support, and AWS X-Ray traces requests across microservices.
+Build a containerized Node.js application by splitting a monolithic application into three independent microservices: **Auth, Orders, and Notifications**. Amazon ECS Fargate runs the containers without requiring server management, while Amazon ECR stores their Docker images. An Application Load Balancer routes external requests to the appropriate microservice. AWS Secrets Manager securely provides credentials and API keys at runtime, while ElastiCache for Redis stores shared session data across container instances. AWS CodePipeline and CodeDeploy automate blue/green deployments with rollback support.
 
 ## 3. AWS Services and Their Roles
 
 - **Amazon ECS Fargate:** Runs the microservices as containers without managing the underlying servers.
 - **Amazon ECR:** Stores private Docker images and scans images for vulnerabilities.
 - **Application Load Balancer (ALB) + Target Groups:** Routes incoming requests to the appropriate ECS service using path-based routing.
-- **AWS Cloud Map:** Enables microservices to discover and communicate with each other using DNS names.
 - **AWS Secrets Manager:** Securely stores database credentials and API keys and provides them to containers at runtime.
 - **Amazon ElastiCache (Redis):** Stores shared session data accessible by multiple stateless container instances.
 - **AWS CodePipeline:** Automates the CI/CD pipeline stages for application delivery.
 - **AWS CodeDeploy:** Manages blue/green deployments for ECS services and supports automatic rollback.
-- **AWS X-Ray:** Traces requests across microservices and visualizes service dependencies to help identify performance issues.
 
 ## 4. Key Features
 
@@ -198,8 +196,6 @@ Build a containerized Node.js application by splitting a monolithic application 
 - Docker image management using Amazon ECR.
 - Serverless container management with ECS Fargate.
 - Path-based traffic routing through an Application Load Balancer.
-- DNS-based service discovery using AWS Cloud Map.
 - Secure runtime secrets management.
 - Shared session caching with Redis.
 - Automated blue/green deployments with rollback support.
-- Distributed tracing across microservices using AWS X-Ray.
