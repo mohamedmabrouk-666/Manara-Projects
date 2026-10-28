@@ -235,3 +235,42 @@ Build a serverless data lake for retail transaction analytics using Amazon S3. K
 - Interactive KPI dashboards using Amazon QuickSight and SPICE.
 - Scheduled ETL processing using EventBridge Scheduler.
 - Access control and encryption using IAM and KMS.
+
+## =======================================
+
+# Project 8: Secure Multi-Tier Architecture with GuardDuty, KMS & Security Hub
+
+## 1. Solution Architecture Diagram
+
+![AWS Architecture Diagram](/images/Project08.png)
+
+## 2. Project Description
+
+Design a secure three-tier application consisting of web, application, and data tiers. AWS WAF and AWS Shield Standard help protect the application from web exploits and DDoS attacks, while AWS KMS encrypts data at rest and encryption in transit protects communication. AWS Secrets Manager securely stores database credentials and supports automatic credential rotation. Amazon GuardDuty detects suspicious activity, and AWS Security Hub centralizes security findings and compliance checks. AWS CloudTrail records API activity. IAM and SG on instances level and ACLs on subnet level.
+
+## 3. AWS Services and Their Roles
+
+- **AWS KMS:** Manages customer-managed encryption keys used to protect supported resources and data at rest.
+- **AWS Secrets Manager:** Securely stores secrets and supports automatic rotation of Amazon RDS credentials.
+- **Amazon GuardDuty:** Detects potential threats, such as reconnaissance, unusual API activity, and cryptocurrency mining.
+- **AWS Security Hub:** Aggregates security findings and evaluates security posture against supported standards, such as CIS AWS Foundations Benchmark and PCI DSS.
+- **AWS Config:** Tracks resource configurations, evaluates compliance rules, and supports automatic remediation for configured non-compliant resources.
+- **AWS CloudTrail:** Records AWS API activity for auditing and investigation, with log file integrity validation available for supported trails.
+- **AWS WAF:** Helps protect web applications against common web exploits, including SQL injection and cross-site scripting.
+- **AWS Shield Standard:** Provides automatic protection against common network and transport layer DDoS attacks.
+- **AWS IAM:** Manages identities, roles, and permissions using the principle of least privilege.
+- **Amazon EventBridge:** Routes security-related events to configured targets to initiate response workflows.
+- **AWS Lambda:** Executes automated incident response and remediation actions.
+
+## 4. Key Features
+
+- Three-tier application security architecture.
+- Encryption at rest using AWS KMS and encryption in transit.
+- Centralized secret management and automatic RDS credential rotation.
+- Threat detection with Amazon GuardDuty.
+- Centralized security findings and compliance checks using Security Hub.
+- Resource configuration auditing with AWS Config.
+- API activity logging with CloudTrail.
+- Web application and DDoS protection using WAF and Shield Standard.
+- Automated incident response using EventBridge and Lambda.
+- Least-privilege access and organization-level permission guardrails using IAM .
