@@ -134,3 +134,36 @@ Design a hybrid cloud network that connects an on-premises data center to multip
 - Centralized network traffic inspection using AWS Network Firewall.
 - Network configuration auditing and tracking with CloudTrail and AWS Config.
 - Comparison of Site-to-Site VPN and Direct Connect.
+
+## =======================================
+
+# Project 5: Multi-Region Disaster Recovery with Route 53 Failover
+
+## 1. Solution Architecture Diagram
+
+![AWS Architecture Diagram](/images/Project05.png)
+
+## 2. Project Description
+
+Build a multi-region disaster recovery architecture for a web application running primarily in **us-east-1**, with warm standby resources in **eu-west-1**.Amazon Aurora Global Database replicates database changes across regions, while Amazon S3 Cross-Region Replication.Tables help maintain data availability across regions. EC2 Auto Scaling Groups maintain minimal standby capacity and scale up during failover. AWS CloudFormation StackSets deploy consistent infrastructure, AWS Backup protects resources, and CloudWatch with EventBridge supports monitoring and failover automation.
+
+## 3. AWS Services and Their Roles
+
+- **Amazon Aurora Global Database:** Replicates database data from the primary cluster to a secondary-region cluster for disaster recovery.
+- **Amazon EC2 + Auto Scaling Groups (ASG):** Run the application in both regions, maintaining minimal standby capacity and scaling up when needed.
+- **AWS CloudFormation StackSets:** Deploy and manage consistent infrastructure across multiple AWS accounts and regions.
+- **AWS Backup:** Centralizes backup plans and protects supported resources, including RDS databases and EC2 instances.
+- **Amazon CloudWatch:** Monitors application and infrastructure metrics and generates alarms when problems occur.
+- **Amazon EventBridge:** Routes events to trigger automated recovery workflows, such as invoking Lambda functions during failover.
+
+## 4. Key Features
+
+- Multi-region disaster recovery across `us-east-1` and `eu-west-1`.
+- Warm Standby architecture with reduced capacity in the secondary region.
+- Automatic DNS failover using Route 53 health checks.
+- Cross-region database replication using Aurora Global Database.
+- Automatic scaling of standby resources during recovery.
+- Consistent multi-region deployments using CloudFormation StackSets.
+- Centralized backups with AWS Backup.
+- Monitoring and recovery automation using CloudWatch and EventBridge.
+- Comparison of Backup & Restore, Pilot Light, Warm Standby, and Multi-Site Active-Active strategies.
