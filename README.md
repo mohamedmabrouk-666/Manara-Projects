@@ -199,3 +199,39 @@ Build a containerized Node.js application by splitting a monolithic application 
 - Secure runtime secrets management.
 - Shared session caching with Redis.
 - Automated blue/green deployments with rollback support.
+
+## =======================================
+
+# Project 7: Serverless Data Lake and Analytics Pipeline
+
+## 1. Solution Architecture Diagram
+
+![AWS Architecture Diagram](/images/Project07.png)
+
+## 2. Project Description
+
+Build a serverless data lake for retail transaction analytics using Amazon S3. Kinesis Data Firehose delivers incoming transaction data to the raw zone in S3. AWS Glue Crawlers discover the data schema, while Glue ETL jobs transform raw JSON data into partitioned Parquet files stored in the curated zone. Processed data can then be aggregated into the aggregated zone for reporting. Amazon Athena runs SQL queries on the data, and Amazon QuickSight visualizes business KPIs in interactive dashboards using SPICE caching. AWS Lake Formation manages fine-grained data access, EventBridge Scheduler triggers scheduled ETL jobs, and IAM with AWS KMS manages permissions and encryption.
+
+## 3. AWS Services and Their Roles
+
+- **Amazon S3:** Stores the data lake in three zones: Raw, Curated, and Aggregated. Supports lifecycle policies and Intelligent-Tiering storage.
+- **Amazon Kinesis Data Firehose:** Ingests transactional data and delivers it to S3 with configurable buffering and compression.
+- **AWS Glue:** Uses Crawlers to discover schemas, the Data Catalog to store metadata, and ETL jobs to transform JSON data into partitioned Parquet format.
+- **Amazon Athena:** Runs serverless SQL queries directly against data stored in S3, with partitioning to reduce scanned data and query costs.
+- **AWS Lake Formation:** Manages fine-grained data permissions, including supported table-, column-, and row-level access controls.
+- **Amazon QuickSight:** Creates dashboards and visualizes KPIs, using SPICE for in-memory data caching and supported row-level security.
+- **Amazon EventBridge Scheduler:** Runs Glue ETL jobs on a defined schedule.
+- **AWS IAM:** Controls access to AWS resources through users, roles, and policies.
+- **AWS Key Management Service (KMS):** Manages encryption keys used to protect data at rest.
+
+## 4. Key Features
+
+- Serverless data lake with Raw, Curated, and Aggregated zones.
+- Transaction data ingestion using Kinesis Data Firehose.
+- Schema discovery and metadata management using AWS Glue.
+- JSON-to-Parquet transformation with partitioned data storage.
+- Cost-efficient SQL analytics using Amazon Athena.
+- Fine-grained data governance with AWS Lake Formation.
+- Interactive KPI dashboards using Amazon QuickSight and SPICE.
+- Scheduled ETL processing using EventBridge Scheduler.
+- Access control and encryption using IAM and KMS.
